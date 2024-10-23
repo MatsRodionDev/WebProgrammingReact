@@ -11,16 +11,10 @@ const AddUser = ({ addUser }) => {
 
   return (
     <div>
-       
       <button onClick={() => setShowForm(!showForm)}>
         {showForm ? 'Cancel' : 'Add User'}
       </button>
-      {showForm &&
-      <>
-         <h2>Add user</h2>
-        <UserForm onSubmit={handleAddUser}/>
-      </> 
-      }
+      {showForm && <UserForm onSubmit={handleAddUser} />}
     </div>
   );
 };
