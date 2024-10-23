@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import UserList from './UserList';
-import AddUser from './AddUser';
-import EditUser from './EditUser';
+import UserList from './components/UserList';
+import AddUser from './components/AddUser';
+import EditUser from './components/EditUser';
+import './App.css';
 
 const App = () => {
-  const [users, setUsers] = useState([]);
+  // Инициализация с тремя пользователями
+  const [users, setUsers] = useState([
+    { id: 1, name: 'Alice Smith', email: 'alice@example.com' },
+    { id: 2, name: 'Bob Johnson', email: 'bob@example.com' },
+    { id: 3, name: 'Charlie Brown', email: 'charlie@example.com' },
+  ]);
   const [editingUser, setEditingUser] = useState(null);
 
   const addUser = (user) => {
@@ -25,7 +31,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>User Cards</h1>
       <AddUser addUser={addUser} />
       {editingUser && <EditUser user={editingUser} updateUser={updateUser} />}

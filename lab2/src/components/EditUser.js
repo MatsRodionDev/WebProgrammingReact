@@ -6,7 +6,12 @@ const EditUser = ({ user, updateUser }) => {
     updateUser({ ...user, ...updatedUser });
   };
 
-  return <UserForm user={user} onSubmit={handleUpdateUser} />;
+  return (
+    <>
+        <h2>Edit user</h2>
+        <UserForm user={user} onSubmit={handleUpdateUser} />
+    </>)
+  ;
 };
 
 export default EditUser;
