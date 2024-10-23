@@ -1,7 +1,6 @@
 import React from 'react';
-import '../App.css';
 
-const UserCard = ({ user, deleteUser, startEdit }) => {
+const UserCard = ({ user, deleteUser, startEdit, showDetails }) => {
   return (
     <div className="user-card">
       <div>
@@ -11,6 +10,7 @@ const UserCard = ({ user, deleteUser, startEdit }) => {
       <div>
         <button onClick={() => startEdit(user)}>Edit</button>
         <button onClick={() => deleteUser(user.id)}>Delete</button>
+        <button onClick={() => showDetails(user)}>Details</button>
       </div>
     </div>
   );
