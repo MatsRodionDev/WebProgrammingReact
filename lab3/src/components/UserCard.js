@@ -1,18 +1,23 @@
 import React from 'react';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 
 const UserCard = ({ user, deleteUser, startEdit, showDetails }) => {
   return (
-    <div className="user-card">
-      <div>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-      </div>
-      <div>
-        <button onClick={() => startEdit(user)}>Edit</button>
-        <button onClick={() => deleteUser(user.id)}>Delete</button>
-        <button onClick={() => showDetails(user)}>Details</button>
-      </div>
-    </div>
+    <Card className="user-card mb-3">
+      <Card.Body>
+        <Row>
+          <Col>
+            <Card.Title>{user.name}</Card.Title>
+            <Card.Text>{user.email}</Card.Text>
+          </Col>
+          <Col className="text-right">
+            <Button variant="primary" onClick={() => startEdit(user)}>Edit</Button>
+            <Button variant="danger" onClick={() => deleteUser(user.id)} className="ml-2">Delete</Button>
+            <Button variant="info" onClick={() => showDetails(user)} className="ml-2">Details</Button>
+          </Col>
+        </Row>
+      </Card.Body>
+    </Card>
   );
 };
 
