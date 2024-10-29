@@ -1,29 +1,29 @@
 import React from 'react';
+import { Container, Card, ListGroup } from 'react-bootstrap';
 
 const About = () => {
-  return(
-    <>
-        <div className="container-description">
-            <h1>About this App</h1>
-            <p>
-                The User Management App is designed to help you efficiently manage user information.
-            </p>
-            <p>
-                Features include:
-            </p>
-            <ul>
-                <li>Add new users</li>
-                <li>Edit existing user details</li>
-                <li>Delete users from the system</li>
-                <li>View detailed information about each user</li>
-            </ul>
-            <p>
-                Built using React, this app provides a responsive and modern interface for handling user data.
-            </p>
-        </div>
-        
-    </>
-  ); 
+  return (
+    <Container className="mt-5">
+      <Card>
+        <Card.Body>
+          <Card.Title>About this App</Card.Title>
+          <Card.Text>
+            The User Management App is designed to help you efficiently manage user information.
+          </Card.Text>
+          <Card.Text>Features include:</Card.Text>
+          <ListGroup variant="flush">
+            <ListGroup.Item>Add new users</ListGroup.Item>
+            <ListGroup.Item>Edit existing user details</ListGroup.Item>
+            <ListGroup.Item>Delete users from the system</ListGroup.Item>
+            <ListGroup.Item>View detailed information about each user</ListGroup.Item>
+          </ListGroup>
+          <Card.Text>
+            Built using React, this app provides a responsive and modern interface for handling user data.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Container>
+  );
 };
 
 export default About;
