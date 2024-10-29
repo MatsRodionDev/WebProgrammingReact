@@ -15,6 +15,7 @@ const UserForm = ({ user, onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ id: user ? user.id : Date.now(), name, email });
+    // Сброс полей после отправки
     setName('');
     setEmail('');
   };
@@ -43,7 +44,7 @@ const UserForm = ({ user, onSubmit }) => {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="mt-3">
         Submit
       </Button>
     </Form>
