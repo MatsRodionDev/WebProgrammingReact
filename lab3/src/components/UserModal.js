@@ -5,8 +5,8 @@ const UserModal = ({ user, onClose }) => {
   if (!user) return null;
 
   return (
-    <Modal show={true} onHide={onClose} centered={true}>
-      <Modal.Header >
+    <Modal show={true} onHide={onClose} centered>
+      <Modal.Header closeButton>
         <Modal.Title>{user.name}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
